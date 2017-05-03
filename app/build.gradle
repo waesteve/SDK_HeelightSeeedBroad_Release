@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId 'com.heelight.client'
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 25
+        versionName '2.2.10'
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true //混淆
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            jniDebuggable true
+        }
+        release {
+//            shrinkResources true
+//            zipAlignEnabled true
+            minifyEnabled true //混淆
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    apply plugin: 'com.neenbedankt.android-apt'
+    productFlavors {
+    }
+}
+
+
+
+
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('src/main/libs/commons-io-2.4.jar')
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+}
