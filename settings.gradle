@@ -1,0 +1,2 @@
+include ':app' //, ':heetonecor'
+//project(':playerview1').projectDir = new File('playerview')
